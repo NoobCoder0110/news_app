@@ -43,18 +43,18 @@ class SearchScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Obx(() {
-              // Check if the filtertitle list is empty
+
               if (controller.filtertitle.isEmpty) {
                 return const Center(child: Text("No results found"));
               }
 
-              // Display the filtered titles
-              return Expanded(  // Wrap ListView with Expanded so it takes remaining space
+
+              return Expanded(  
                 child: ListView.builder(
                   itemCount: controller.filtertitle.length,
                   itemBuilder: (context, index) {
                     var resultIndex = controller.filtertitle[index];
-                    var data = controller.snapshot[resultIndex]; // Get full data for the selected result
+                    var data = controller.snapshot[resultIndex]; 
 
                     return GestureDetector(
                       onTap: () {
@@ -75,7 +75,7 @@ class SearchScreen extends StatelessWidget {
                         ));
                       },
                       child: ListTile(
-                        title: Text(data.title),  // Use the title from the full data
+                        title: Text(data.title, style: Theme.of(context).textTheme.bodyMedium),  
                       ),
                     );
                   },

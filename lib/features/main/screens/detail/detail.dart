@@ -96,7 +96,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 style: Theme.of(context).textTheme.labelLarge!.copyWith(fontSize: _textSize),
               ),
               const SizedBox(height: 5),
-              const Divider(),
+              Divider(color: Theme.of(context).colorScheme.surface.withOpacity(0.4),),
               const SizedBox(height: 5),
               widget.desFacet!.isEmpty
                   ? const SizedBox.shrink()
